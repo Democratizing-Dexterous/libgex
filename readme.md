@@ -27,6 +27,8 @@ The 4 joints design in thumb enable the exoskeleton glove to be better attached 
 ```bash
 python demo_gx11.py
 ```
+<img src="assets/demo_gx11.gif" width="80%">
+
 
 ### Control EX12
 ```bash
