@@ -65,6 +65,16 @@ print(glove.fk_finger1()) # get the thumb tip xyz position in base_link frame (b
 
 All the contorl commands are in `libgex/libgx11.py` and `libgex/libex12.py`
 
+
+### Hardware 
+
+#### EX12
+
+#### GX11
+
+Coming soon...
+
+
 ### Acknowledgement
 
 https://github.com/ROBOTIS-GIT/DynamixelSDK
