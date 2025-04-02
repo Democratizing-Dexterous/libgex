@@ -72,6 +72,8 @@ All the contorl commands are in `libgex/libgx11.py` and `libgex/libex12.py`
 
 #### EX12
 
+https://github.com/Democratizing-Dexterous/ExoskeletonGloveEX12
+
 #### GX11
 
 Coming soon...
