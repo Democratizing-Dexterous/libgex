@@ -76,7 +76,7 @@ https://github.com/Democratizing-Dexterous/ExoskeletonGloveEX12
 
 #### GX11
 
-Coming soon...
+https://github.com/Democratizing-Dexterous/DexterousHandGX11
 
 
 ### Acknowledgement
