@@ -82,4 +82,5 @@ https://github.com/Democratizing-Dexterous/DexterousHandGX11
 ### Acknowledgement
 
 https://github.com/ROBOTIS-GIT/DynamixelSDK
+
 Leap Hand
