@@ -1,5 +1,16 @@
 ## Updates
-* 2025-06-06: Our paper is released in [arxiv](https://arxiv.org/pdf/2506.04982).
+* 2025-06-06: Our paper is released in [arxiv](https://arxiv.org/pdf/2506.04982). You can cite by:
+```bibtex
+@misc{dong2025gexdemocratizingdexterityfullyactuated,
+      title={GEX: Democratizing Dexterity with Fully-Actuated Dexterous Hand and Exoskeleton Glove}, 
+      author={Yunlong Dong and Xing Liu and Jun Wan and Zelin Deng},
+      year={2025},
+      eprint={2506.04982},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2506.04982}, 
+}
+```
 
 ## Python Library to Control Dexterous Hand GX11 and Exoskeleton Glove EX12 
 Libgex uses dynamixel SDK to control the motors in Python via OpenRB-150 control board through TTL at 1M bps. And libgex uses PyBullet to calculate the forward kinematics and inverse kinematics of the GX11 and EX12.
