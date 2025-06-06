@@ -1,3 +1,6 @@
+## Updates
+* 2025-06-06: Our paper is released in [arxiv](https://arxiv.org/pdf/2506.04982).
+
 ## Python Library to Control Dexterous Hand GX11 and Exoskeleton Glove EX12 
 Libgex uses dynamixel SDK to control the motors in Python via OpenRB-150 control board through TTL at 1M bps. And libgex uses PyBullet to calculate the forward kinematics and inverse kinematics of the GX11 and EX12.
 
