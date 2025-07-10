@@ -37,7 +37,7 @@ class KinGX11:
         for i, joint_position in zip(self.thumb_joint_ids, q):
             p.setJointMotorControl2(self.bullet_hand, i, p.POSITION_CONTROL, joint_position)
         
-        for i in range(20):
+        for i in range(120):
             p.stepSimulation()
 
         ee_pos = p.getLinkState(self.bullet_hand, self.thumb_link_id, computeForwardKinematics=1)[4]
@@ -65,7 +65,7 @@ class KinGX11:
         for i, joint_position in zip(self.index_joint_ids, q):
             p.setJointMotorControl2(self.bullet_hand, i, p.POSITION_CONTROL, joint_position)
         
-        for i in range(20):
+        for i in range(120):
             p.stepSimulation()
 
         ee_pos = p.getLinkState(self.bullet_hand, self.index_link_id, computeForwardKinematics=1)[4]
@@ -92,7 +92,7 @@ class KinGX11:
         for i, joint_position in zip(self.middle_joint_ids, q):
             p.setJointMotorControl2(self.bullet_hand, i, p.POSITION_CONTROL, joint_position)
         
-        for i in range(20):
+        for i in range(120):
             p.stepSimulation()
 
         ee_pos = p.getLinkState(self.bullet_hand, self.middle_link_id, computeForwardKinematics=1)[4]
