@@ -117,7 +117,7 @@ class Motor:
         self.packet_handler.write1ByteTxRx(self.port_handler, self.id, self.addr_operating_mode, self.curr_operating_mode)
 
         
-    def init_config(self, curr_limit=1500, goal_current=1000, goal_pwm=800):
+    def init_config(self, curr_limit=800, goal_current=300, goal_pwm=800):
         """
         电机初始配置，LED闪烁，设置为力控位置模式，并使能电机，goal_current影响力的大小，goal_pwm影响速度
         """
