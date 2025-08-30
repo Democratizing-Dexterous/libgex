@@ -27,11 +27,14 @@ pip install pybullet
 
 ### GX11 and EX12 URDF
 
-Drag folder `libgex/gx11` or `libgex/ex11`  into <http://urdf.robotsfan.com/> to visualize the URDF.
+Recommended using [URDFly](https://github.com/Democratizing-Dexterous/URDFly) to visualize the URDF.
+
+<img src="assets/gx11_urdf_urdfly.png" width="100%">
+<img src="assets/ex12_urdf_urdfly.png" width="100%">
+
+Or drag folder `libgex/gx11` or `libgex/ex11`  into <http://urdf.robotsfan.com/> to visualize the URDF.
 
 GX11 has 3 joints in finger1(thumb), 4 joints in finger2(index), 4 joints in finger3(middle).
-
-<img src="assets/gx11_urdf.png" width="80%">
 
 Or use <https://github.com/openrr/urdf-viz> to visualize the URDF and display the link name and axes.
 
