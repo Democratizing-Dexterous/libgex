@@ -27,7 +27,7 @@ class KinEX12:
         self.middle_link_id = 14
         self.middle_joint_ids = [10, 11, 12, 13]
 
-        self.direction_finger1 = [1, -1, -1, -1]
+        self.direction_finger1 = [1, 1, 1, 1]
         self.direction_finger2 = [-1, 1, 1, 1]
         self.direction_finger3 = [-1, -1, -1, -1]
 

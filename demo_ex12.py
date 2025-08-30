@@ -5,7 +5,7 @@ import time
 
 port = search_ports()[0]
  
-glove = Glove('/dev/ttyACM1', vis=True) # COM* for Windows, ttyACM* or ttyUSB* for Linux
+glove = Glove('COM38', vis=True) # COM* for Windows, ttyACM* or ttyUSB* for Linux
 glove.connect(init=False) # do not torque on glove yet.
 
 
