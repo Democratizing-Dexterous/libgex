@@ -13,7 +13,7 @@ class Hand:
         self.name = 'GX11'
         self.kin = kinematics.KinGX11(vis)
 
-    def connect(self, goal_pwm=300):
+    def connect(self, curr_limit=500, goal_current=300, goal_pwm=300):
         """
         连接Hand，并且使能每个电机为默认的力控位置模式
         """
@@ -35,7 +35,7 @@ class Hand:
         self.motors = [Motor(i+1, portHandler, packetHandler) for i in range(11)]
 
         for m in self.motors:
-            m.init_config(goal_pwm=goal_pwm)
+            m.init_config(curr_limit=curr_limit, goal_current=goal_current, goal_pwm=goal_pwm)
         
         print(f'{self.name} init done...')
 

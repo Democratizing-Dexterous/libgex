@@ -42,8 +42,6 @@ EX12 has 4 joints in finger1(thumb), 4 joints in finger2(index), 4 joints in fin
 
 The 4 joints design in thumb enable the exoskeleton glove to be better attached to the human thumb tip.
 
-<img src="assets/ex12_urdf.png" width="80%">
-
 ### Control GX11
 
 ```bash
@@ -65,7 +63,7 @@ from libgex.libgx11 import Hand
 import time
  
 hand = Hand(port='/dev/ttyACM0') # COM* for Windows, ttyACM* or ttyUSB* for Linux, if in Linux, check the port number with `ls /dev/tty*`, then run `sudo chmod 777 /dev/ttyACM*`
-hand.connect(goal_pwm=600) # will torque on all the motors, goal_pwm changes the speed, max 855
+hand.connect(curr_limit=500, goal_current=300, goal_pwm=300) # will torque on all the motors, goal_pwm changes the speed, max 855
 
 hand.home() # home the hand
 

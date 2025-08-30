@@ -126,6 +126,7 @@ class Motor:
             time.sleep(0.1)
             self.led_off()
             time.sleep(0.1)
+            
         self.set_curr_limit(curr_limit)
         self.pos_force_mode(goal_current, goal_pwm)
          

@@ -2,7 +2,7 @@ from libgex.libgx11 import Hand
 import time
  
 hand = Hand(port='/dev/ttyACM0') # COM* for Windows, ttyACM* or ttyUSB* for Linux
-hand.connect(goal_pwm=600) # goal_pwm changes the speed, max 855
+hand.connect(curr_limit=500, goal_current=300, goal_pwm=300) # goal_pwm changes the speed, max 855
 
 hand.home() # home the hand
 
