@@ -6,10 +6,13 @@ abs_path = osp.dirname(osp.abspath(__file__))
 
 
 class KinEX12:
-    def __init__(self) -> None:
+    def __init__(self, vis=False) -> None:
         self.name = 'EX12'
-        p.connect(p.DIRECT)
-        self.offset_z = 3
+        if vis:
+            p.connect(p.GUI)
+        else:
+            p.connect(p.DIRECT)
+        self.offset_z = 0
 
         self.bullet_hand = p.loadURDF(osp.join(abs_path, "urdf/ex12.urdf"), useFixedBase=True, basePosition=[0, 0, self.offset_z])
         for i in range(20):
@@ -39,7 +42,7 @@ class KinEX12:
         for i, joint_position in zip(self.thumb_joint_ids, q):
             p.setJointMotorControl2(self.bullet_hand, i, p.POSITION_CONTROL, joint_position)
         
-        for i in range(20):
+        for i in range(120):
             p.stepSimulation()
 
         ee_pos = p.getLinkState(self.bullet_hand, self.thumb_link_id, computeForwardKinematics=1)[4]
@@ -71,7 +74,7 @@ class KinEX12:
         for i, joint_position in zip(self.index_joint_ids, q):
             p.setJointMotorControl2(self.bullet_hand, i, p.POSITION_CONTROL, joint_position)
         
-        for i in range(20):
+        for i in range(120):
             p.stepSimulation()
 
         ee_pos = p.getLinkState(self.bullet_hand, self.index_link_id, computeForwardKinematics=1)[4]
@@ -102,7 +105,7 @@ class KinEX12:
         for i, joint_position in zip(self.middle_joint_ids, q):
             p.setJointMotorControl2(self.bullet_hand, i, p.POSITION_CONTROL, joint_position)
         
-        for i in range(20):
+        for i in range(120):
             p.stepSimulation()
 
         ee_pos = p.getLinkState(self.bullet_hand, self.middle_link_id, computeForwardKinematics=1)[4]

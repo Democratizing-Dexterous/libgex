@@ -6,9 +6,12 @@ abs_path = osp.dirname(osp.abspath(__file__))
 
 
 class KinGX11:
-    def __init__(self) -> None:
+    def __init__(self, vis=False) -> None:
         self.name = 'GX11'
-        p.connect(p.DIRECT)
+        if vis:
+            p.connect(p.GUI)
+        else:
+            p.connect(p.DIRECT)
 
         self.bullet_hand = p.loadURDF(osp.join(abs_path, "urdf/gx11.urdf"), useFixedBase=True, basePosition=[0, 0, 0])
         for i in range(20):

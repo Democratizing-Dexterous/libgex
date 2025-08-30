@@ -7,11 +7,11 @@ from .config import BAUDRATE, PROTOCOL_VERSION
 from .ex12 import kinematics
 
 class Glove:
-    def __init__(self, port) -> None:
+    def __init__(self, port, vis=False) -> None:
         self.is_connected = False
         self.port = port
         self.name = 'EX12'
-        self.kin = kinematics.KinEX12()
+        self.kin = kinematics.KinEX12(vis)
 
     def connect(self, goal_pwm=300, init=True):
         """

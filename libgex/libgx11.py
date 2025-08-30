@@ -7,11 +7,11 @@ from .config import BAUDRATE, PROTOCOL_VERSION
 from .gx11 import kinematics
 
 class Hand:
-    def __init__(self, port) -> None:
+    def __init__(self, port, vis=False) -> None:
         self.is_connected = False
         self.port = port
         self.name = 'GX11'
-        self.kin = kinematics.KinGX11()
+        self.kin = kinematics.KinGX11(vis)
 
     def connect(self, goal_pwm=300):
         """

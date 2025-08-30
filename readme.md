@@ -1,5 +1,7 @@
 ## Updates
+
 * 2025-06-06: Our paper is released in [arxiv](https://arxiv.org/pdf/2506.04982). You can cite by:
+
 ```bibtex
 @misc{dong2025gexdemocratizingdexterityfullyactuated,
       title={GEX: Democratizing Dexterity with Fully-Actuated Dexterous Hand and Exoskeleton Glove}, 
@@ -12,23 +14,26 @@
 }
 ```
 
-## Python Library to Control Dexterous Hand GX11 and Exoskeleton Glove EX12 
+## Python Library to Control Dexterous Hand GX11 and Exoskeleton Glove EX12
+
 Libgex uses dynamixel SDK to control the motors in Python via OpenRB-150 control board through TTL at 1M bps. And libgex uses PyBullet to calculate the forward kinematics and inverse kinematics of the GX11 and EX12.
 
 ### Python Dependencies
+
 ```bash
 pip install pyserial
 pip install pybullet
 ```
 
 ### GX11 and EX12 URDF
-Drag folder `libgex/gx11` or `libgex/ex11`  into http://urdf.robotsfan.com/ to visualize the URDF.
+
+Drag folder `libgex/gx11` or `libgex/ex11`  into <http://urdf.robotsfan.com/> to visualize the URDF.
 
 GX11 has 3 joints in finger1(thumb), 4 joints in finger2(index), 4 joints in finger3(middle).
 
 <img src="assets/gx11_urdf.png" width="80%">
 
-Or use https://github.com/openrr/urdf-viz to visualize the URDF and display the link name and axes.
+Or use <https://github.com/openrr/urdf-viz> to visualize the URDF and display the link name and axes.
 
 EX12 has 4 joints in finger1(thumb), 4 joints in finger2(index), 4 joints in finger3(middle).
 
@@ -41,15 +46,17 @@ The 4 joints design in thumb enable the exoskeleton glove to be better attached 
 ```bash
 python demo_gx11.py
 ```
+
 <img src="assets/demo_gx11.gif" width="80%">
 
-
 ### Control EX12
+
 ```bash
 python demo_ex12.py
 ```
 
 ### Code Example
+
 ```bash
 from libgex.libgx11 import Hand
 import time
@@ -81,20 +88,37 @@ print(glove.fk_finger1()) # get the thumb tip xyz position in base_link frame (b
 
 All the contorl commands are in `libgex/libgx11.py` and `libgex/libex12.py`
 
+### Kinematics
 
-### Hardware 
+Pybullet is used to handle forward kinematics and inverse kinematics, you can pass `vis=True` to toggle visualization in pybullet by:
+
+```python
+from libgex.libex12 import Glove
+glove = Glove('/dev/ttyACM1', vis=True) # COM* for Windows, ttyACM* or ttyUSB* for Linux
+glove.connect(init=False) # do not torque on glove yet.
+
+while True:
+    glove.fk_finger1() # get the thumb tip xyz position in base_link frame (bottom of the palm), unit m
+    glove.fk_finger2() # get the index tip xyz position in base_link frame (bottom of the palm), unit m
+    glove.fk_finger3() # get the middle tip xyz position in base_link frame (bottom of the palm), unit m
+    
+    time.sleep(0.1)
+```
+
+Then you can move ex12 to see the corresponding movement in pybullet.
+
+### Hardware
 
 #### EX12
 
-https://github.com/Democratizing-Dexterous/ExoskeletonGloveEX12
+<https://github.com/Democratizing-Dexterous/ExoskeletonGloveEX12>
 
 #### GX11
 
-https://github.com/Democratizing-Dexterous/DexterousHandGX11
-
+<https://github.com/Democratizing-Dexterous/DexterousHandGX11>
 
 ### Acknowledgement
 
-https://github.com/ROBOTIS-GIT/DynamixelSDK
+<https://github.com/ROBOTIS-GIT/DynamixelSDK>
 
 Leap Hand
